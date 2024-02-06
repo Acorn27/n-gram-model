@@ -2,9 +2,6 @@ from util import load_csv
 from config import ROOT_DIR
 import os
 
-def load_sample_data():
-    return _load_dataset('test1.csv')
-
 def load_dataset(dataset_name):
     return _load_dataset(dataset_name)
 

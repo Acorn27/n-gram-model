@@ -4,7 +4,7 @@ class Tri_gram_Tokenizer():
     def _custom_preprocessing(self, sentence):
         """
         Special preprocessing to treat punctuation and ’s as seperate token
-        :param sentece: inidividual string sentence
+        :param sentence: inidividual string sentence
         :return: a processed string sentece
         """
         special_chars = ["’", '.', ',']
@@ -15,7 +15,9 @@ class Tri_gram_Tokenizer():
                 chars.insert(i, ' ')
                 i += 2  # Skip the inserted space
             i += 1
+
         return ''.join(chars)
+
 
     def tokenize(self, sentence):
 
@@ -26,7 +28,7 @@ class Tri_gram_Tokenizer():
         """
         refined_sentence = self._custom_preprocessing(sentence)
 
-        augmented_sentence = "<s> " + "<s> " + refined_sentence + "</s>"
+        augmented_sentence = "<s> " + "<s> " + refined_sentence + " </s>"
 
         return augmented_sentence.split()
 
